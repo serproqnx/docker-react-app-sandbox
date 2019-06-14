@@ -4,11 +4,13 @@ services:
     build: 
       context: .
       dockerfile: Dockerfile.dev
+    command: npm install
+    command: npm start
     ports:
       - "3000:3000"
     volumes:
-      - /app/node_modules
       - .:/app
+      - /app/node_modules
   # tests:
   #   build:
   #     context: .
